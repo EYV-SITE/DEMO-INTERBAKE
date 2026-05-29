@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERBAKE - Producto</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e24;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            color: #f4a261;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+        .lista-archivos {
+            width: 100%;
+            max-width: 500px;
+            list-style: none;
+            padding: 0;
+        }
+        .item-archivo {
+            background-color: #2d2d34;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .btn-pdf {
+            background-color: #e63946;
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-pdf:hover {
+            background-color: #d62828;
+        }
+        .nav-links {
+            margin-top: 2rem;
+        }
+        .nav-links a {
+            color: #a0a0a0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>PRODUCTO / LÍNEA DE PRODUCCIÓN</h2>
+
+    <ul class="lista-archivos">
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write(`
+                    <li class="item-archivo">
+                        <span>Archivo ${i}</span>
+                        <a href="ejemplo.pdf" target="_blank" class="btn-pdf">
+                            📄 PDF
+                        </a>
+                    </li>
+                `);
+            }
+        </script>
+    </ul>
+
+    <div class="nav-links">
+        <a href="menu.html">← Volver al Menú</a>
+        <a href="index.html">Inicio</a>
+    </div>
+
+</body>
+</html>
