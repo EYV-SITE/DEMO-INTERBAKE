@@ -47,5 +47,31 @@
     <h1>INTERBAKE</h1>
     <a href="menu.html" class="btn-ingreso">INGRESO</a>
 
+    <script>
+        // PEGA AQUÍ LA URL COMPLETA QUE COPIASTE DE GOOGLE APPS SCRIPT
+        const urlGoogleScript = https://script.google.com/macros/s/AKfycbylXfgnV9GwR1Bq7PnVMqd_2topWlROpf-LIG1WRNkndXrOzTfklQ84WHNJuPMfO6DO5Q/exec;
+
+        // Función que se ejecuta automáticamente al abrir la página
+        window.onload = function() {
+            // 1. Consultamos el servicio público para saber la IP del visitante
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipVisitante = data.ip;
+
+                    // 2. Enviamos la IP detectada directamente a nuestro Google Sheet
+                    fetch(urlGoogleScript, {
+                        method: 'POST',
+                        mode: 'no-cors', // Evita bloqueos de seguridad del navegador
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ ip: ipVisitante })
+                    });
+                })
+                .catch(error => console.log('Error al registrar acceso:', error));
+        }
+    </script>
+
 </body>
 </html>
